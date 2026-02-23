@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": ".",
+    "customConditions": ["@coolco/root"],
+    "paths": {
+      "@coolco/*": ["libs/*", "apps/*", "tools/*"]
+    },
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ES2022",
+    "lib": ["ES2022"]
+  },
+  "exclude": ["node_modules", "dist", "tmp"]
+}

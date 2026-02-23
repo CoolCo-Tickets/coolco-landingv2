@@ -1,0 +1,46 @@
+{
+  "name": "landing",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/landing/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/landing",
+        "configFile": "apps/landing/vite.config.ts"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "landing:build",
+        "configFile": "apps/landing/vite.config.ts"
+      },
+      "configurations": {
+        "development": {}
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "defaultConfiguration": "watch",
+      "options": {
+        "configFile": "apps/landing/vite.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "watch": {},
+        "ci": {
+          "watch": false
+        }
+      }
+    }
+  }
+}

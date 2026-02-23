@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page-bg: #fafafa;
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-page-bg);
+  margin: 0;
+  min-height: 100vh;
+}
