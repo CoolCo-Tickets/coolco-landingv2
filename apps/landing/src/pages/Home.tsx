@@ -77,9 +77,11 @@ const TRAPEZOID_REST_BG = [
   'rgba(0, 0, 0, 0.55)',
 ] as const;
 
+const BASE = import.meta.env.BASE_URL;
+
 function logoFile(id: string, variant: 'white' | 'grey'): string {
   const name = id === 'cashless' ? 'Cashless' : id === 'tickets' ? 'Tickets' : 'Fan2Fan';
-  return `/logos/CoolCo ${name}_${variant}.svg`;
+  return `${BASE}logos/CoolCo ${name}_${variant}.svg`;
 }
 
 /**
@@ -307,7 +309,7 @@ export function Home(): JSX.Element {
               onClick={() => goToSlide(carouselIndex - 1)}
               aria-label="Anterior"
             >
-              <img src="/images/left-arrow.svg" alt="" className="w-4 h-auto" />
+              <img src={`${BASE}images/left-arrow.svg`} alt="" className="w-4 h-auto" />
             </button>
           )}
 
@@ -319,7 +321,7 @@ export function Home(): JSX.Element {
               onClick={() => goToSlide(carouselIndex + 1)}
               aria-label="Siguiente"
             >
-              <img src="/images/right-arrow.svg" alt="" className="w-4 h-auto" />
+              <img src={`${BASE}images/right-arrow.svg`} alt="" className="w-4 h-auto" />
             </button>
           )}
         </section>
@@ -339,7 +341,7 @@ export function Home(): JSX.Element {
             className="hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent rounded"
             aria-label="Instagram"
           >
-            <img src="/images/ig-icon.svg" alt="" className="h-7 w-7" />
+            <img src={`${BASE}images/ig-icon.svg`} alt="" className="h-7 w-7" />
           </a>
           <a
             href="https://ar.linkedin.com/company/be-coolco"
@@ -348,7 +350,7 @@ export function Home(): JSX.Element {
             className="hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent rounded"
             aria-label="LinkedIn"
           >
-            <img src="/images/in-icon.svg" alt="" className="h-7 w-7" />
+            <img src={`${BASE}images/in-icon.svg`} alt="" className="h-7 w-7" />
           </a>
         </div>
         <p className="text-sm">© Copyright, 2026 Proyecto Florida S.A</p>

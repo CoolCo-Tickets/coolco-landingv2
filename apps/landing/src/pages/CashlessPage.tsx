@@ -10,7 +10,7 @@ export function CashlessPage(): JSX.Element {
       {/* Background: dark crowd image with heavy overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/images/coolco-bg.png)' }}
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/coolco-bg.png)` }}
         aria-hidden
       />
       <div className="absolute inset-0 bg-black/80" aria-hidden />
@@ -18,7 +18,7 @@ export function CashlessPage(): JSX.Element {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6">
         <img
-          src="/logos/CoolCo Cashless_grey.svg"
+          src={`${import.meta.env.BASE_URL}logos/CoolCo Cashless_grey.svg`}
           alt="CoolCo Cashless"
           className="w-48 sm:w-64 lg:w-80 opacity-60"
         />
