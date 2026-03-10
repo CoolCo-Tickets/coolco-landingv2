@@ -1,0 +1,30 @@
+# coolco-landing Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2026-02-23
+
+## Active Technologies
+
+- TypeScript 5.6 + React 18, Vite 6, Tailwind v4 (@tailwindcss/vite 4.2), React Router 7, TanStack Query 5, Zustand 5 (002-landing-redesign)
+
+## Project Structure
+
+```text
+backend/
+frontend/
+tests/
+```
+
+## Commands
+
+npm test && npm run lint
+
+## Code Style
+
+TypeScript 5.6: Follow standard conventions
+
+## Recent Changes
+
+- 002-landing-redesign: Added TypeScript 5.6 + React 18, Vite 6, Tailwind v4 (@tailwindcss/vite 4.2), React Router 7, TanStack Query 5, Zustand 5
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->

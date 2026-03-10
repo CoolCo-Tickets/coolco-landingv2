@@ -1,0 +1,37 @@
+{
+  "name": "@coolco/root",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.14.2",
+  "scripts": {
+    "build": "nx run landing:build",
+    "dev": "nx run landing:serve",
+    "test": "nx run landing:test"
+  },
+  "dependencies": {
+    "axios": "1.7.9",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "7.0.1",
+    "@tanstack/react-query": "5.62.2",
+    "@tanstack/react-query-devtools": "5.62.2",
+    "zustand": "5.0.2"
+  },
+  "devDependencies": {
+    "@nx/js": "22.5.2",
+    "@nx/vite": "22.5.2",
+    "@tailwindcss/vite": "4.2.1",
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.0.1",
+    "@types/node": "22.10.1",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.4",
+    "jsdom": "25.0.1",
+    "nx": "22.5.2",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.6.3",
+    "vite": "6.0.3",
+    "vitest": "2.1.6"
+  }
+}
