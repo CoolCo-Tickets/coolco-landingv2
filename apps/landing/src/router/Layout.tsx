@@ -1,11 +1,9 @@
 import { Outlet } from 'react-router-dom';
 
+/** No nav per design: content overlays full-screen background. */
 export function Layout(): JSX.Element {
   return (
-    <div>
-      <header className="border-b border-gray-200 px-4 py-2">
-        <h1 className="text-lg font-semibold">CoolCo</h1>
-      </header>
+    <div className="min-h-screen">
       <Outlet />
     </div>
   );

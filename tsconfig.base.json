@@ -3,10 +3,9 @@
     "composite": false,
     "declaration": true,
     "declarationMap": true,
-    "baseUrl": ".",
     "customConditions": ["@coolco/root"],
     "paths": {
-      "@coolco/*": ["libs/*", "apps/*", "tools/*"]
+      "@coolco/*": ["./libs/*", "./apps/*", "./tools/*"]
     },
     "strict": true,
     "skipLibCheck": true,
