@@ -5,7 +5,8 @@ const DESKTOP_SECTIONS = [
   {
     id: 'cashless',
     label: 'CASHLESS',
-    comingSoon: true,
+    comingSoon: false,
+    logoLabel: 'Próximamente',
     path: '/cashless',
     external: false,
     hoverClass: 'trapezoid-hover-cashless',
@@ -14,6 +15,7 @@ const DESKTOP_SECTIONS = [
     id: 'tickets',
     label: 'TICKETS',
     comingSoon: false,
+    logoLabel: '',
     path: 'https://ticketing.coolco.io/tickets-ar/es/main',
     external: true,
     hoverClass: 'trapezoid-hover-tickets',
@@ -22,6 +24,7 @@ const DESKTOP_SECTIONS = [
     id: 'fantofan',
     label: 'FAN TO FAN',
     comingSoon: false,
+    logoLabel: '',
     path: 'https://sell-ticket.f2f.coolco.io/es/landing',
     external: true,
     hoverClass: 'trapezoid-hover-fantofan',
@@ -30,18 +33,12 @@ const DESKTOP_SECTIONS = [
 
 const MOBILE_SECTIONS = [
   {
-    id: 'cashless',
-    label: 'CASHLESS',
-    path: '/cashless',
-    external: false,
-    comingSoon: true,
-  },
-  {
     id: 'tickets',
     label: 'TICKETS',
     path: 'https://ticketing.coolco.io/tickets-ar/es/main',
     external: true,
     comingSoon: false,
+    logoLabel: '',
   },
   {
     id: 'fantofan',
@@ -49,6 +46,15 @@ const MOBILE_SECTIONS = [
     path: 'https://sell-ticket.f2f.coolco.io/es/landing',
     external: true,
     comingSoon: false,
+    logoLabel: '',
+  },
+  {
+    id: 'cashless',
+    label: 'CASHLESS',
+    path: '/cashless',
+    external: false,
+    comingSoon: true,
+    logoLabel: 'Próximamente',
   },
 ] as const;
 
@@ -139,8 +145,11 @@ export function Home(): JSX.Element {
           className="absolute inset-0 hidden lg:block lg:overflow-hidden bg-[#0f172a]"
           aria-label="Secciones principales"
         >
-          {/* Layer 1: single BG image */}
-          <div className="absolute inset-0 bg-coolco-full pointer-events-none" aria-hidden />
+          {/* Layer 1: single BG image with blur */}
+          <div
+            className="absolute inset-0 bg-coolco-full blur-[2px]! pointer-events-none"
+            aria-hidden
+          />
 
           {/* Layer 2: trapezoidal dark/color overlays — pointer-events:none, active gets z-index 20 */}
           {DESKTOP_SECTIONS.map((section, i) => {
@@ -162,7 +171,7 @@ export function Home(): JSX.Element {
                 {isHovered && (
                   <>
                     <span
-                      className="absolute inset-0 bg-coolco-full-active pointer-events-none"
+                      className="absolute inset-0 bg-coolco-full-active blur-[1px]! pointer-events-none"
                       style={{ transform: 'scale(0.6667, 1)', transformOrigin: origin }}
                       aria-hidden
                     />
@@ -199,7 +208,7 @@ export function Home(): JSX.Element {
               <a
                 key={section.id}
                 {...linkProps}
-                className="absolute flex flex-col items-center focus:outline-none focus:ring-2 focus:ring-white"
+                className="absolute flex flex-col items-center outline-none"
                 style={{
                   left: isHovered ? TRAPEZOID_LOGO_HOVER[i] : TRAPEZOID_LOGO_REST[i],
                   top: '50%',
@@ -210,9 +219,9 @@ export function Home(): JSX.Element {
                 onMouseEnter={() => setDesktopHover(i)}
                 onMouseLeave={() => setDesktopHover(null)}
               >
-                {section.comingSoon && (
+                {section.logoLabel && (
                   <span className="self-start mb-1 text-sm font-semibold text-gray-400">
-                    Próximamente
+                    {section.logoLabel}
                   </span>
                 )}
                 <img
@@ -243,9 +252,9 @@ export function Home(): JSX.Element {
               return (
                 <div key={section.id} className="relative w-full h-full shrink-0">
                   {/* BG layers: dark base → active colorful (fades in) → overlays */}
-                  <div className="absolute inset-0 bg-coolco-full" />
+                  <div className="absolute inset-0 bg-coolco-full blur-[1px]!" />
                   <div
-                    className="absolute inset-0 bg-coolco-full-active transition-opacity duration-700"
+                    className="absolute inset-0 bg-coolco-full-active blur-[2px]! transition-opacity duration-700"
                     style={{ opacity: isActive ? 1 : 0 }}
                   />
                   <div
