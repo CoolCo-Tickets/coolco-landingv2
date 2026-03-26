@@ -33,6 +33,14 @@ const DESKTOP_SECTIONS = [
 
 const MOBILE_SECTIONS = [
   {
+    id: 'cashless',
+    label: 'CASHLESS',
+    path: '/cashless',
+    external: false,
+    comingSoon: true,
+    logoLabel: 'Próximamente',
+  },
+  {
     id: 'tickets',
     label: 'TICKETS',
     path: 'https://ticketing.coolco.io/tickets-ar/es/main',
@@ -47,14 +55,6 @@ const MOBILE_SECTIONS = [
     external: true,
     comingSoon: false,
     logoLabel: '',
-  },
-  {
-    id: 'cashless',
-    label: 'CASHLESS',
-    path: '/cashless',
-    external: false,
-    comingSoon: true,
-    logoLabel: 'Próximamente',
   },
 ] as const;
 
@@ -96,7 +96,7 @@ function logoFile(id: string, variant: 'white' | 'grey'): string {
  */
 export function Home(): JSX.Element {
   const [desktopHover, setDesktopHover] = useState<number | null>(null);
-  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [carouselIndex, setCarouselIndex] = useState(1);
   const [carouselPaintedIndex, setCarouselPaintedIndex] = useState(-1);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
@@ -171,7 +171,7 @@ export function Home(): JSX.Element {
                 {isHovered && (
                   <>
                     <span
-                      className="absolute inset-0 bg-coolco-full-active blur-[1px]! pointer-events-none"
+                      className="absolute inset-0 bg-coolco-full-active blur-[2px]! pointer-events-none"
                       style={{ transform: 'scale(0.6667, 1)', transformOrigin: origin }}
                       aria-hidden
                     />
