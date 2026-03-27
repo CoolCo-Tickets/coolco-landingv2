@@ -30,8 +30,6 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       - run: pnpm nx run landing:build
-        env:
-          BASE_URL: /coolco-landingv2/
 
       - uses: actions/upload-pages-artifact@v3
         with:
