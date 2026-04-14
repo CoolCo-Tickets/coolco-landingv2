@@ -10,7 +10,7 @@ export function CashlessPage(): JSX.Element {
       {/* Background: dark crowd image with heavy overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/coolco-bg.png)` }}
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}images/coolco-bg-mobile.webp)` }}
         aria-hidden
       />
       <div className="absolute inset-0 bg-black/80" aria-hidden />

@@ -208,6 +208,7 @@ export function Home(): JSX.Element {
               <a
                 key={section.id}
                 {...linkProps}
+                aria-label={`Ir a CoolCo ${section.label}`}
                 className="absolute flex flex-col items-center outline-none"
                 style={{
                   left: isHovered ? TRAPEZOID_LOGO_HOVER[i] : TRAPEZOID_LOGO_REST[i],
@@ -227,6 +228,8 @@ export function Home(): JSX.Element {
                 <img
                   src={logoFile(section.id, variant)}
                   alt={`CoolCo ${section.label}`}
+                  width={280}
+                  height={80}
                   style={{ width: 'clamp(100px, 14vw, 280px)', height: 'auto' }}
                   className="object-contain"
                 />
@@ -279,6 +282,7 @@ export function Home(): JSX.Element {
                       href={section.path}
                       target={section.external ? '_blank' : undefined}
                       rel={section.external ? 'noopener noreferrer' : undefined}
+                      aria-label={`Ir a CoolCo ${section.label}`}
                       className="flex flex-col items-start"
                     >
                       {section.comingSoon && (
@@ -289,6 +293,8 @@ export function Home(): JSX.Element {
                       <img
                         src={logoFile(section.id, 'white')}
                         alt={`CoolCo ${section.label}`}
+                        width={208}
+                        height={60}
                         className="w-52 h-auto object-contain"
                       />
                     </a>
@@ -297,6 +303,7 @@ export function Home(): JSX.Element {
                         href={section.path}
                         target={section.external ? '_blank' : undefined}
                         rel={section.external ? 'noopener noreferrer' : undefined}
+                        aria-label={`Ingresar a CoolCo ${section.label}`}
                         className={`mt-8 w-full max-w-[280px] py-3 rounded-sm text-center font-semibold text-base transition-all duration-500 ${
                           isActive ? 'bg-white text-[#8b2040]' : 'border-2 border-white text-white'
                         }`}
@@ -318,7 +325,13 @@ export function Home(): JSX.Element {
               onClick={() => goToSlide(carouselIndex - 1)}
               aria-label="Anterior"
             >
-              <img src={`${BASE}images/left-arrow.svg`} alt="" className="w-4 h-auto" />
+              <img
+                src={`${BASE}images/left-arrow.svg`}
+                alt=""
+                width={16}
+                height={16}
+                className="w-4 h-auto"
+              />
             </button>
           )}
 
@@ -330,9 +343,30 @@ export function Home(): JSX.Element {
               onClick={() => goToSlide(carouselIndex + 1)}
               aria-label="Siguiente"
             >
-              <img src={`${BASE}images/right-arrow.svg`} alt="" className="w-4 h-auto" />
+              <img
+                src={`${BASE}images/right-arrow.svg`}
+                alt=""
+                width={16}
+                height={16}
+                className="w-4 h-auto"
+              />
             </button>
           )}
+
+          {/* Pagination dots */}
+          <div className="absolute bottom-28 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            {MOBILE_SECTIONS.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 p-2 ${
+                  carouselIndex === i ? 'bg-white scale-125' : 'bg-white/40'
+                }`}
+                onClick={() => goToSlide(i)}
+                aria-label={`Ir al slide ${i + 1}`}
+              />
+            ))}
+          </div>
         </section>
       </div>
 
@@ -348,18 +382,30 @@ export function Home(): JSX.Element {
             target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent rounded"
-            aria-label="Instagram"
+            aria-label="Instagram de CoolCo"
           >
-            <img src={`${BASE}images/ig-icon.svg`} alt="" className="h-7 w-7" />
+            <img
+              src={`${BASE}images/ig-icon.svg`}
+              alt=""
+              width={28}
+              height={28}
+              className="h-7 w-7"
+            />
           </a>
           <a
             href="https://ar.linkedin.com/company/be-coolco"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent rounded"
-            aria-label="LinkedIn"
+            aria-label="LinkedIn de CoolCo"
           >
-            <img src={`${BASE}images/in-icon.svg`} alt="" className="h-7 w-7" />
+            <img
+              src={`${BASE}images/in-icon.svg`}
+              alt=""
+              width={28}
+              height={28}
+              className="h-7 w-7"
+            />
           </a>
         </div>
         <p className="text-sm">© Copyright, 2026 Proyecto Florida S.A</p>
