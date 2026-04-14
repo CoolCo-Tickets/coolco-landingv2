@@ -1,30 +1,38 @@
 @import 'tailwindcss';
 
-/* Fonts: Montserrat from functional/context/resourses/fonts/ (copied to public/fonts/) per FR-008 */
+/* Fonts: Montserrat — WOFF2 subsetted (latin) with TTF fallback (FR-008) */
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-Light.ttf') format('truetype');
+  src:
+    url('/fonts/Montserrat-Light-subset.woff2') format('woff2'),
+    url('/fonts/Montserrat-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  src:
+    url('/fonts/Montserrat-Regular-subset.woff2') format('woff2'),
+    url('/fonts/Montserrat-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-SemiBold.ttf') format('truetype');
+  src:
+    url('/fonts/Montserrat-SemiBold-subset.woff2') format('woff2'),
+    url('/fonts/Montserrat-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+  src:
+    url('/fonts/Montserrat-Bold-subset.woff2') format('woff2'),
+    url('/fonts/Montserrat-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -50,10 +58,10 @@ body {
   min-height: 100vh;
 }
 
-/* Single full-page crowd background (T007). Only one instance for the whole page. */
+/* Single full-page crowd background (T007). Mobile-first: small image, desktop override at lg. */
 .bg-coolco-full {
   background-color: #0f172a;
-  background-image: url('/images/coolco-bg.png');
+  background-image: url('/images/coolco-bg-mobile.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -61,10 +69,18 @@ body {
 /* Color variant for hovered trapezoid: vivid crowd image inside polygon after grow (image 1). */
 .bg-coolco-full-active {
   background-color: #0f172a;
-  background-image: url('/images/coolco-bg-active.png');
+  background-image: url('/images/coolco-bg-active-mobile.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+@media (min-width: 1024px) {
+  .bg-coolco-full {
+    background-image: url('/images/coolco-bg.webp');
+  }
+  .bg-coolco-full-active {
+    background-image: url('/images/coolco-bg-active.webp');
+  }
 }
 /* Colored overlay for hover: light tint on top of color image so polygon looks vivid (image 1). */
 .trapezoid-hover-tickets {

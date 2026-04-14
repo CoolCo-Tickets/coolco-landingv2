@@ -5,7 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
-    <title>CoolCo Landing</title>
+    <title>CoolCo | Tickets, Cashless y Fan to Fan para eventos</title>
+    <meta
+      name="description"
+      content="CoolCo es tu plataforma integral para comprar tickets, pagos cashless y reventa Fan to Fan en eventos y espectáculos."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CoolCo | Tickets, Cashless y Fan to Fan para eventos" />
+    <meta
+      property="og:description"
+      content="CoolCo es tu plataforma integral para comprar tickets, pagos cashless y reventa Fan to Fan en eventos y espectáculos."
+    />
+    <meta property="og:image" content="https://coolco.io/og-image.png" />
+    <meta property="og:url" content="https://coolco.io" />
+    <link rel="canonical" href="https://coolco.io" />
+    <!-- Preload critical background image (LCP): mobile-first, desktop override -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/images/coolco-bg-mobile.webp"
+      media="(max-width: 1023px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/images/coolco-bg.webp"
+      media="(min-width: 1024px)"
+    />
+    <!-- Preload LCP logo -->
+    <link rel="preload" as="image" type="image/svg+xml" href="/logos/CoolCo%20Tickets_white.svg" />
+    <!-- Preload critical fonts -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/Montserrat-SemiBold-subset.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/Montserrat-Regular-subset.woff2"
+      crossorigin
+    />
     <script>
       // SPA redirect handler for GitHub Pages
       (function () {
@@ -13,7 +58,11 @@
         var p = params.get('p');
         if (p) {
           var q = params.get('q');
-          var path = '/' + p.replace(/~and~/g, '&') + (q ? '?' + q.replace(/~and~/g, '&') : '') + window.location.hash;
+          var path =
+            '/' +
+            p.replace(/~and~/g, '&') +
+            (q ? '?' + q.replace(/~and~/g, '&') : '') +
+            window.location.hash;
           window.history.replaceState(null, null, path);
         }
       })();
