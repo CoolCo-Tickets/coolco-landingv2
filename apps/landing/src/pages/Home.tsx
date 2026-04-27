@@ -138,6 +138,43 @@ export function Home(): JSX.Element {
 
   return (
     <main className="relative min-h-screen w-full flex flex-col" role="main">
+      {/* SEO: visually hidden semantic content for crawlers — design full-screen is unchanged */}
+      <div className="sr-only">
+        <h1>CoolCo — Comprar entradas online Argentina: tickets, cashless y Fan to Fan</h1>
+        <p>
+          <strong>CoolCo tickets</strong> es la ticketera online argentina líder para{' '}
+          <strong>comprar entradas online Argentina</strong>. Conseguí{' '}
+          <strong>entradas para recitales Argentina</strong>,{' '}
+          <strong>comprar entradas recitales Buenos Aires</strong>,{' '}
+          <strong>tickets shows musicales argentina</strong> y{' '}
+          <strong>entradas conciertos argentina</strong>. También podés{' '}
+          <strong>comprar tickets concierto online</strong> para los mejores shows del país.
+        </p>
+        <p>
+          ¿Buscás <strong>entradas fiestas electrónicas argentina</strong> o{' '}
+          <strong>tickets fiestas Buenos Aires</strong>? En CoolCo podés{' '}
+          <strong>comprar entradas eventos sociales</strong> y{' '}
+          <strong>tickets eventos nocturnos argentina</strong>. Hay{' '}
+          <strong>entradas disponibles hoy</strong> y <strong>entradas último momento</strong>.{' '}
+          <strong>Comprar entrada con tarjeta argentina</strong> es rápido y seguro.
+        </p>
+        <p>
+          Conseguí tus <strong>entradas estadio obras</strong>,{' '}
+          <strong>estadio obras sanitarias tickets</strong> y{' '}
+          <strong>comprar entradas estadio obras Buenos Aires</strong>. Consultá los{' '}
+          <strong>próximos shows estadio obras</strong> y elegí entre{' '}
+          <strong>entradas estadio obras campo platea</strong>. CoolCo tiene los{' '}
+          <strong>shows estadio obras Argentina</strong> más importantes con{' '}
+          <strong>estadio obras fechas entradas online</strong> actualizadas.
+        </p>
+        <p>
+          CoolCo ofrece <strong>pagos cashless</strong> y tecnología{' '}
+          <strong>cashless Argentina</strong> para que disfrutes cada evento sin efectivo. Cómo
+          comprar entradas online Argentina: ingresá a coolco.io, elegí tu evento y pagá con
+          tarjeta. Dónde comprar entradas para recitales: en CoolCo tenés toda la oferta de{' '}
+          <strong>tickets online argentina</strong> en un solo lugar.
+        </p>
+      </div>
       {/* Content area: full viewport on desktop so image takes entire screen; footer overlays bottom. */}
       <div className="relative min-h-screen flex-1">
         {/* Desktop: ONE full-screen background; 4 layers. */}

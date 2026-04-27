@@ -10,6 +10,7 @@ import { FantofanPage } from '../pages/FantofanPage';
 import { YourTicketsPage } from '../pages/YourTicketsPage';
 import { EventDetailPage } from '../pages/EventDetailPage';
 import { CompraPage } from '../pages/CompraPage';
+import { SeoPage } from '../pages/SeoPage';
 
 const baseUrl = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '') || '/';
 
@@ -34,6 +35,7 @@ export const router = createBrowserRouter(
         { path: 'cashless', element: <CashlessPage /> },
         { path: 'seccion/:slug', element: <SeccionPage /> },
         { path: 'item/:id', element: <ItemDetail /> },
+        { path: 'entradas', element: <SeoPage /> },
         { path: '*', element: <Navigate to="/" replace /> },
       ],
     },
