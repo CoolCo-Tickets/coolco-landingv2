@@ -25,7 +25,7 @@ const DESKTOP_SECTIONS = [
     label: 'FAN TO FAN',
     comingSoon: false,
     logoLabel: '',
-    path: 'https://sell-ticket.f2f.coolco.io/es/landing',
+    path: 'https://sell-ticket.f2f.coolco.io/es/landing?ticketSellerId=148',
     external: true,
     hoverClass: 'trapezoid-hover-fantofan',
   },
@@ -51,7 +51,7 @@ const MOBILE_SECTIONS = [
   {
     id: 'fantofan',
     label: 'FAN TO FAN',
-    path: 'https://sell-ticket.f2f.coolco.io/es/landing',
+    path: 'https://sell-ticket.f2f.coolco.io/es/landing?ticketSellerId=148',
     external: true,
     comingSoon: false,
     logoLabel: '',
